@@ -1,4 +1,4 @@
-<head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,5 +16,8 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('admin/css/vertical-layout-light/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
-</head>
+    {{-- <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" /> --}}
+
+{{-- toster notification --}}
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+

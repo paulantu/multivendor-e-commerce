@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://e-shop.test'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -167,7 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Spatie\Permission\PermissionServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -192,6 +193,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];

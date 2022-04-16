@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('admin.layout.style')
+<head>
+    @include('admin.layout.style')
+
+</head>
 
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
-
-
-
+        @include('sweetalert::alert')
         @include('admin.layout.header')
 
 
@@ -56,8 +57,8 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
     @include('admin.layout.script')
+
 </body>
 
 </html>
