@@ -77,10 +77,16 @@
               <i class="ti-settings text-primary"></i>
               Settings
             </a>
-            <a class="dropdown-item">
-              <i class="ti-power-off text-primary"></i>
-              Logout
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a href="{{ route('logout') }}" class="dropdown-item"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    <i class="ti-power-off text-primary"></i>
+                    {{ __('Log Out') }}
             </a>
+            </form>
           </div>
         </li>
         <li class="nav-item nav-settings d-none d-lg-flex">

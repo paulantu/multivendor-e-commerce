@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Carbon\Carbon;
+use App\Models\User;
 
 class RoleController extends Controller
 {
@@ -98,6 +99,18 @@ class RoleController extends Controller
             return redirect('admin/all-roles')->with('message', $message);
         }
 
+    }
+
+
+
+
+
+
+
+    public function RoleAsignIndex(){
+        $users = User::latest()->paginate(25);
+        $user_roles = Role::all();
+        return view('admin.pages.role_permission.role.asign_role',compact('users','user_roles'));
     }
 
 }

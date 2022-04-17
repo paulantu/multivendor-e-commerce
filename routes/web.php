@@ -46,6 +46,9 @@ Route::prefix('/admin')->group(function () {
     Route::put('/update-role/{id}', [RoleController::class, 'UpdateRole']);
     Route::delete('/delete-role/{id}', [RoleController::class, 'Destroy']);
 
+    // Asign role
+    Route::get('/asign-role', [RoleController::class, 'RoleAsignIndex']);
+
 
 
 

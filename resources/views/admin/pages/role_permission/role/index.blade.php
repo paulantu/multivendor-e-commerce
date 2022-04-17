@@ -20,6 +20,7 @@
                             <div class="text-right">
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#add-permission">Add Role</button>
+                                <a type="button" href="{{ url('admin/asign-role') }}" class="btn btn-primary">Asign Role</a>
                             </div>
 
                             <div class="modal fade" id="add-permission" tabindex="-1" role="dialog"

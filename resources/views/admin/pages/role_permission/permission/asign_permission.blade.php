@@ -6,7 +6,7 @@
             <div class="col-lg-12 stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Permissions</h3>
+                        <h3>Asign Permissions</h3>
                     </div>
                 </div>
             </div>
@@ -16,44 +16,15 @@
             <div class="col-lg-12 stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <div>
-                            <div class="text-right">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#add-permission">Add Permission</button>
-                                <a type="button" href="{{ url('admin/asign-permission') }}" class="btn btn-primary">Asign Permission</a>
-                            </div>
-
-                            <div class="modal fade" id="add-permission" tabindex="-1" role="dialog"
-                                aria-labelledby="addPermissionLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="addPermissionLabel">Add Role</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="{{ url('admin/add-role') }}" method="post">
-                                                @csrf
-                                                <div class="form-group">
-                                                    <label for="name">Role Name</label>
-                                                    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter permission name" required>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Save</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <br>
                         <div class="table-responsive pt-3">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
                                         <th>Permissions</th>
                                         <th>Action</th>
                                     </tr>
@@ -62,10 +33,13 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($permissions as $permission)
+                                    @foreach ($asign_permissions as $permission)
                                         @if ($i % 2 == 1)
                                             <tr class="table-success">
                                                 <td>{{ $i++ }}</td>
+                                                <td>{{ $permission->name }}</td>
+                                                <td>{{ $permission->email }}</td>
+                                                <td>{{ $permission->role }}</td>
                                                 <td> {{ $permission->name }}</td>
                                                 <td>
                                                     <a href="{{url('admin/edit-permission/'.$permission->id)}}" class="btn btn-primary btn-xs"><i
